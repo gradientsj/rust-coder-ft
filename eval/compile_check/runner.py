@@ -107,7 +107,11 @@ def check(code: str, tests: str | None = None, *, clippy: bool = True,
     res = CheckResult(meta=meta or {})
     lib = _HEADER + code
     if tests:
-        lib += f"\n\n#[cfg(test)]\nmod harness_tests {{\n    use super::*;\n{tests}\n}}\n"
+        if tests.lstrip().startswith("#[cfg(test)"):
+            lib += "\n\n" + tests + "\n"   # already a complete test module
+        else:
+            lib += (f"\n\n#[cfg(test)]\nmod harness_tests {{\n"
+                    f"    use super::*;\n{tests}\n}}\n")
 
     t0 = time.monotonic()
     with tempfile.TemporaryDirectory(prefix="rcft-") as td:
