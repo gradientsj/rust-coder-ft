@@ -1,0 +1,47 @@
+# Curated crate allowlist for the domain scrape.
+#
+# Crates are pulled as published source tarballs from crates.io (cleaner license
+# metadata than git HEAD; the API reports the SPDX expression per version).
+# `org` is provenance only — recorded per file, not used for filtering.
+#
+# LICENSE POLICY (hard filter, enforced in github_harvest.py):
+#   Every token of the crate's SPDX expression must be in `license_allowlist`.
+#   This is stricter than SPDX OR-semantics on purpose: "MIT OR GPL-3.0" is
+#   REJECTED even though MIT could be elected, so no reviewer ever has to
+#   reason about license election. Unknown/missing expressions are rejected.
+#   Files carrying their own contradicting SPDX-License-Identifier header are
+#   dropped individually.
+
+license_allowlist:
+  - MIT
+  - Apache-2.0
+  - BSD-2-Clause
+  - BSD-3-Clause
+
+harvest:
+  max_files_per_crate: 400        # safety cap; tiny-test runs override lower
+  include_dirs: [src, examples, tests, benches]
+  exclude_path_substrings: [/target/, /vendor/, /third_party/]
+  rate_limit_seconds: 1.0         # crates.io API policy: max 1 req/s
+  user_agent: "rust-coder-ft data pipeline (stanleyjacobai@gmail.com)"
+
+crates:
+  # rust-lang
+  - {name: regex,       org: rust-lang}
+  - {name: log,         org: rust-lang}
+  - {name: libc,        org: rust-lang}
+  # tokio-rs
+  - {name: tokio,       org: tokio-rs}
+  - {name: mio,         org: tokio-rs}
+  - {name: bytes,       org: tokio-rs}
+  - {name: tracing,     org: tokio-rs}
+  # serde-rs
+  - {name: serde,       org: serde-rs}
+  - {name: serde_json,  org: serde-rs}
+  # clap
+  - {name: clap,        org: clap-rs}
+  # rayon
+  - {name: rayon,       org: rayon-rs}
+  # hyperium
+  - {name: hyper,       org: hyperium}
+  - {name: http,        org: hyperium}

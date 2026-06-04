@@ -19,6 +19,7 @@ dependencies = [
     "requests",               # crates.io API + tarball download
     "pyyaml",
     "zstandard",              # some HF datasets ship zstd parquet
+    "matplotlib",             # data/prepare/stats.py dataset visuals
 ]
 
 # flash-attn and transformer-engine must be installed AFTER torch with
