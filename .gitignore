@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+constraints.txt
+data/raw/
+data/work/
+data/splits/*.jsonl
+data/splits/stats/
+wandb/
+outputs/
+*.egg-info/

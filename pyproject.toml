@@ -1,0 +1,44 @@
+[project]
+name = "rust-coder-ft"
+version = "0.1.0"
+description = "Full BF16+FP8 fine-tune of Qwen3-Coder for idiomatic Rust (4x H100, Axolotl + FSDP)"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    # torch==2.8.0+cu128 is installed into the venv by setup_env.sh BEFORE this
+    # (system torch is 2.7.0, but no axolotl release supports 2.7: 0.13-0.16 pin
+    # 2.8.0, 0.17 wants >=2.9.1). axolotl 0.16.1 exact-pins transformers==5.5.0,
+    # plus matching trl/accelerate/torchao, so we don't version those here.
+    "axolotl==0.16.1",
+    "transformers",
+    "trl",
+    "datasets>=3.0",
+    "accelerate",
+    "wandb",
+    "datasketch>=1.6",        # MinHash near-dedup
+    "huggingface_hub",
+    "requests",               # crates.io API + tarball download
+    "pyyaml",
+    "zstandard",              # some HF datasets ship zstd parquet
+]
+
+# flash-attn and transformer-engine must be installed AFTER torch with
+# --no-build-isolation (their setup.py imports torch at build/metadata time).
+# Installed by setup_env.sh, kept here as an extra so the dependency is documented:
+#   pip install --no-build-isolation flash-attn transformer_engine[pytorch]
+[project.optional-dependencies]
+kernels = [
+    "flash-attn==2.8.3",      # version axolotl 0.16.1 is tested against
+    "transformer_engine[pytorch]>=2.0",
+]
+eval = [
+    "evalplus>=0.3",          # HumanEval+/MBPP+ retention harness
+    "vllm>=0.8",              # batched generation for eval + serving
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# data-pipeline / eval / export scripts are run as files, not an installed package
+py-modules = []
