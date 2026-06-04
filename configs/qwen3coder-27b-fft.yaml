@@ -1,0 +1,78 @@
+# ===========================================================================
+# LATER — do not run until the 8B pipeline is proven end to end.
+# ===========================================================================
+# Scaled variant. There is no dense ~27B Qwen3-Coder (the Qwen3-Coder family
+# is MoE-only, verified on the Hub 2026-06-04); the dense step-up from
+# Qwen3-8B is Qwen/Qwen3-32B.
+#
+# Memory reality check (32B full FT, 4x H100 = 320GB):
+#   bf16 params 64GB + bf16 grads 64GB + fp32 master/moments 384GB = 512GB
+#   -> does NOT fit GPU-only. This config therefore offloads optimizer state
+#   to CPU (885GB host RAM, single NUMA node). Expect a substantial step-time
+#   hit from optimizer offload; this is a capability config, not a fast one.
+# Everything else mirrors qwen3coder-8b-fft.yaml.
+
+base_model: Qwen/Qwen3-32B
+trust_remote_code: false
+chat_template: tokenizer_default
+
+datasets:
+  - path: data/splits/train_chat.jsonl
+    type: chat_template
+    field_messages: messages
+  - path: data/splits/train_completion.jsonl
+    type: completion
+
+test_datasets:
+  - path: data/splits/val_chat.jsonl
+    type: chat_template
+    field_messages: messages
+    split: train
+
+dataset_prepared_path: data/work/prepared
+output_dir: outputs/qwen3-32b-fft
+seed: 17
+
+sequence_len: 4096
+sample_packing: true
+eval_sample_packing: false
+pad_to_sequence_len: true
+
+# 1 micro x 4 GPUs x 16 accum = 64 seqs effective, same as the 8B run
+micro_batch_size: 1
+gradient_accumulation_steps: 16
+num_epochs: 2
+
+optimizer: adamw_torch_fused
+learning_rate: 1e-5                  # lower end of the range for the bigger model
+lr_scheduler: cosine
+warmup_ratio: 0.03
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+bf16: true
+tf32: true
+flash_attention: true
+fp8: false
+
+fsdp_version: 2
+fsdp_config:
+  offload_params: true               # REQUIRED at 32B; see header math
+  cpu_offload_pin_memory: true
+  cpu_ram_efficient_loading: true
+  auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  transformer_layer_cls_to_wrap: Qwen3DecoderLayer
+  reshard_after_forward: true
+  activation_checkpointing: true
+  state_dict_type: FULL_STATE_DICT
+  final_state_dict_type: FULL_STATE_DICT
+
+save_steps: 25
+save_total_limit: 5
+eval_steps: 25
+logging_steps: 1
+
+wandb_project: rust-coder-ft
+wandb_name: qwen3-32b-fft
+
+special_tokens: {}

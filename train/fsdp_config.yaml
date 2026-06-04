@@ -1,0 +1,24 @@
+# accelerate launch config for the 4x H100 node (single machine).
+#
+# Deliberately does NOT set distributed_type: FSDP — FSDP is owned by the
+# axolotl config (fsdp_version: 2 + fsdp_config:), which hands the HF Trainer
+# an FSDP plugin at runtime. Defining FSDP in both places is the classic
+# conflicting-config failure with axolotl; accelerate only does process
+# launch + bf16 here.
+compute_environment: LOCAL_MACHINE
+debug: false
+distributed_type: MULTI_GPU
+downcast_bf16: 'no'
+enable_cpu_affinity: true        # single NUMA node (Phase 0), binding is safe
+gpu_ids: all
+machine_rank: 0
+main_training_function: main
+mixed_precision: bf16
+num_machines: 1
+num_processes: 4
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
