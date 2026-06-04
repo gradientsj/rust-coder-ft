@@ -362,3 +362,17 @@ final state); flashinfer-cubin must match flashinfer after vllm downgrades.
   export/upload_hub.sh export/qwen3-8b-ft     gradientsj/rust-coder-8b
   export/upload_hub.sh export/qwen3-8b-grpo   gradientsj/rust-coder-8b-grpo
   export/upload_hub.sh export/qwen3-8b-ft-fp8 gradientsj/rust-coder-8b-fp8
+
+## FP8 vs BF16 SERVING BENCHMARK (2026-06-04, eval/results/serving_bench.json)
+
+Same weights (export/qwen3-8b-ft), identical idle H100s, vLLM 0.22, 64 Rust
+prompts, streaming. FP8 = llm-compressor compressed-tensors (9.4GB vs 16.4GB).
+
+| metric | BF16 | FP8 | delta |
+|---|---|---|---|
+| decode tok/s/req (c=1, p50) | 153.7 | 232.1 | +51% |
+| aggregate tok/s (c=8) | 1032 | 1581 | +53% |
+| aggregate tok/s (c=32) | 2754 | 3766 | +37% |
+| e2e p50 (c=1) | 0.92s | 0.61s | -34% |
+| TTFT p50 (c=32) | 86ms | 97ms | ~parity |
+| quality: pass / compile (n=60, greedy, cargo-judged) | 58.3% / 75% | 66.7% / 80% | within noise -> no measurable FP8 quality loss |

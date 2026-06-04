@@ -13,4 +13,4 @@ outputs/
 # model weight dirs (25GB-class): persist via export/upload_hub.sh, never git
 export/*/
 .venv-*/
-
+export/*.tar

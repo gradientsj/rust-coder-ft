@@ -36,7 +36,8 @@ from pathlib import Path
 
 TRAINING_DEBRIS = (
     "optimizer.bin", "scheduler.pt", "trainer_state.json", "training_args.bin",
-    "pytorch_model_fsdp_0.bin", "scaler.pt",
+    "pytorch_model_fsdp_0.bin", "pytorch_model_fsdp.bin",  # TRL saves the
+    "scaler.pt",                  # latter (no _0) — 16GB of duplicate weights
 )
 TOKENIZER_FILES = (
     "tokenizer.json", "tokenizer_config.json", "special_tokens_map.json",

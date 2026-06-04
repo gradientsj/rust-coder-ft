@@ -1,0 +1,88 @@
+{
+  "max_tokens": 256,
+  "timestamp": "2026-06-04T16:52:42",
+  "perf": {
+    "bf16": [
+      {
+        "concurrency": 1,
+        "n_requests": 64,
+        "wall_s": 62.39,
+        "ttft_p50_ms": 15.6,
+        "ttft_p99_ms": 303.3,
+        "e2e_p50_s": 0.92,
+        "e2e_p99_s": 1.68,
+        "tok_per_s_per_req_p50": 153.7,
+        "aggregate_tok_per_s": 150.5
+      },
+      {
+        "concurrency": 8,
+        "n_requests": 64,
+        "wall_s": 8.92,
+        "ttft_p50_ms": 26.2,
+        "ttft_p99_ms": 39.9,
+        "e2e_p50_s": 0.93,
+        "e2e_p99_s": 1.74,
+        "tok_per_s_per_req_p50": 149.4,
+        "aggregate_tok_per_s": 1032.2
+      },
+      {
+        "concurrency": 32,
+        "n_requests": 64,
+        "wall_s": 3.33,
+        "ttft_p50_ms": 86.3,
+        "ttft_p99_ms": 101.7,
+        "e2e_p50_s": 1.03,
+        "e2e_p99_s": 1.83,
+        "tok_per_s_per_req_p50": 143.0,
+        "aggregate_tok_per_s": 2754.0
+      }
+    ],
+    "fp8": [
+      {
+        "concurrency": 1,
+        "n_requests": 64,
+        "wall_s": 41.46,
+        "ttft_p50_ms": 13.7,
+        "ttft_p99_ms": 556.8,
+        "e2e_p50_s": 0.61,
+        "e2e_p99_s": 1.22,
+        "tok_per_s_per_req_p50": 232.1,
+        "aggregate_tok_per_s": 223.3
+      },
+      {
+        "concurrency": 8,
+        "n_requests": 64,
+        "wall_s": 5.86,
+        "ttft_p50_ms": 21.5,
+        "ttft_p99_ms": 38.6,
+        "e2e_p50_s": 0.66,
+        "e2e_p99_s": 1.16,
+        "tok_per_s_per_req_p50": 225.0,
+        "aggregate_tok_per_s": 1580.7
+      },
+      {
+        "concurrency": 32,
+        "n_requests": 64,
+        "wall_s": 2.51,
+        "ttft_p50_ms": 96.7,
+        "ttft_p99_ms": 147.0,
+        "e2e_p50_s": 0.79,
+        "e2e_p99_s": 1.37,
+        "tok_per_s_per_req_p50": 200.5,
+        "aggregate_tok_per_s": 3766.1
+      }
+    ]
+  },
+  "quality": {
+    "bf16": {
+      "n": 60,
+      "pass_rate": 0.5833,
+      "compile_rate": 0.75
+    },
+    "fp8": {
+      "n": 60,
+      "pass_rate": 0.6667,
+      "compile_rate": 0.8
+    }
+  }
+}
