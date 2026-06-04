@@ -39,6 +39,9 @@ def main() -> None:
     ap.add_argument("--tasks", default=TASKS)
     ap.add_argument("--limit", type=int, default=None, help="debug subset")
     ap.add_argument("--num-processes", type=int, default=4)
+    ap.add_argument("--batch-size", default="64",
+                    help="explicit batch beats 'auto' on the generation path "
+                         "('auto' probes with tiny batches -> hours not minutes)")
     args = ap.parse_args()
 
     out_dir = Path(f"eval/results/general_{args.tag}")
@@ -50,7 +53,7 @@ def main() -> None:
         "--model", "hf",
         "--model_args", f"pretrained={args.model},dtype=bfloat16",
         "--tasks", args.tasks,
-        "--batch_size", "auto",
+        "--batch_size", str(args.batch_size),
         "--output_path", str(out_dir),
         "--confirm_run_unsafe_code",
     ]

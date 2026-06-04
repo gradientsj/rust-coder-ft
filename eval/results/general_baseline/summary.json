@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "tag": "baseline",
+  "source": "eval/results/general_baseline/Qwen__Qwen3-8B/results_2026-06-04T02-24-58.259337.json",
+  "scores": {
+    "humaneval.pass@1": 0.628,
+    "mbpp.pass_at_1": 0.658
+  }
+}
