@@ -1,0 +1,63 @@
+# 10-step overfit sanity run WITH FP8 (torchao float8) - compare against the
+# BF16 sanity curve before enabling fp8 in the real config.
+#
+# Purpose: prove the full stack (data -> template -> FSDP2 -> loss -> optim)
+# is wired correctly. The sanity dataset is exactly 8 records = one global
+# batch (2 micro x 4 GPUs x 1 accum), so every step trains on the SAME batch;
+# loss must drop monotonically (modulo step-1 noise) or something is broken.
+#
+# Differences from the real config, all deliberate:
+#   - constant LR, no warmup: warmup would hide whether the optimizer moves
+#   - sample_packing off: one batch must stay one batch
+#   - no eval, no checkpoints, wandb offline: nothing to measure or keep
+
+base_model: Qwen/Qwen3-8B
+trust_remote_code: false
+chat_template: tokenizer_default
+
+datasets:
+  - path: data/splits/sanity_overfit.jsonl
+    type: chat_template
+    field_messages: messages
+
+dataset_prepared_path: data/work/prepared_sanity_fp8
+output_dir: outputs/sanity-overfit-fp8
+seed: 17
+
+sequence_len: 4096                  # real shape — this is also the memory test
+sample_packing: false
+pad_to_sequence_len: true
+
+micro_batch_size: 2
+gradient_accumulation_steps: 1
+num_epochs: 50                      # max_steps governs
+max_steps: 10
+
+optimizer: adamw_torch_fused
+learning_rate: 2e-5
+lr_scheduler: constant
+warmup_steps: 0
+weight_decay: 0.0
+max_grad_norm: 1.0
+
+bf16: true
+tf32: true
+flash_attention: true
+fp8: true
+fp8_enable_fsdp_float8_all_gather: true
+
+fsdp_version: 2
+fsdp_config:
+  offload_params: false
+  cpu_ram_efficient_loading: false  # required: torchao fp8 + FSDP2 incompatible with it
+  auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  transformer_layer_cls_to_wrap: Qwen3DecoderLayer
+  reshard_after_forward: true
+  activation_checkpointing: true
+  state_dict_type: FULL_STATE_DICT
+
+save_strategy: "no"
+logging_steps: 1
+wandb_mode: offline
+
+special_tokens: {}
