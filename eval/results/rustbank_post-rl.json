@@ -1,0 +1,1114 @@
+{
+  "model": "export/qwen3-8b-grpo",
+  "tag": "post-rl",
+  "n": 158,
+  "pass_rate": 0.3861,
+  "compile_rate": 0.6266,
+  "format_rate": 0.9747,
+  "clippy_clean_of_passing": 0.0,
+  "timestamp": "2026-06-04T10:40:56",
+  "items": [
+    {
+      "name": "Rust/0",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/1",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/2",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/3",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/4",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/5",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/6",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/7",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/8",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/9",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/10",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/11",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/12",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/13",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/14",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/15",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/16",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/17",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/18",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/19",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/20",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/21",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/22",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/23",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/24",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/25",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/26",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/27",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/28",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/29",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/30",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/31",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/33",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/34",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/35",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/36",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/37",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/39",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/40",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/41",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/42",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/43",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/44",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/45",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/46",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/47",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/48",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/49",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/51",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/52",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/54",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/55",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/56",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/57",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/58",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/59",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/60",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/61",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/62",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/63",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/64",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/65",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/66",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/67",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/68",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/69",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/70",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/71",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/72",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/73",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/74",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/75",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/76",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/77",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/78",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/79",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/80",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/81",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/82",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/83",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/84",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/85",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/86",
+      "format": false,
+      "compiles": false,
+      "passes": false
+    },
+    {
+      "name": "Rust/87",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/88",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/89",
+      "format": false,
+      "compiles": false,
+      "passes": false
+    },
+    {
+      "name": "Rust/90",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/92",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/93",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/94",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/95",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/96",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/97",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/98",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/99",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/100",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/101",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/102",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/103",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/104",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/105",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/106",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/107",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/108",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/109",
+      "format": false,
+      "compiles": false,
+      "passes": false
+    },
+    {
+      "name": "Rust/110",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/111",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/112",
+      "format": false,
+      "compiles": false,
+      "passes": false
+    },
+    {
+      "name": "Rust/113",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/114",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/115",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/116",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/117",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/118",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/119",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/120",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/121",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/122",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/123",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/124",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/125",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/126",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/127",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/128",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/129",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/130",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/131",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/132",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/133",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/134",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/135",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/136",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/137",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/138",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/139",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/140",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/141",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/142",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/143",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/144",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/145",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/146",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/147",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/148",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/149",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/150",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/151",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/152",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/153",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/154",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/155",
+      "format": true,
+      "compiles": true,
+      "passes": false,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/156",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/157",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/158",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/159",
+      "format": true,
+      "compiles": true,
+      "passes": true,
+      "clippy_clean": false
+    },
+    {
+      "name": "Rust/160",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/161",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    },
+    {
+      "name": "Rust/163",
+      "format": true,
+      "compiles": false,
+      "passes": false,
+      "clippy_clean": null
+    }
+  ]
+}

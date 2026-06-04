@@ -329,3 +329,36 @@ incompatibility → tokenizer files now byte-copied, never round-tripped).
 3. optional: `export/upload_hub.sh export/qwen3-8b-ft-fp8 gradientsj/rust-coder-8b-fp8`
 4. `git status` should be clean (this report + results are already pushed)
 5. then terminate. Restore path: clone → setup_env.sh → hf download (~20 min)
+
+---
+
+## PHASE 6 RESULTS — GRPO PoC (2026-06-04)
+
+Stack: TRL 1.5.1 + vLLM 0.18 (colocate, eager) + FSDP2 full-FT, `.venv-rl`
+isolated. Reward = graded cargo judge (format -0.2 / compile 0.3 / tests 1.0
+/ +0.1 clippy). Bank: 354 mbpp-rs (train, harness-verified) / 158
+humanevalpack-rust (eval, reference-verified). Contamination policy: Python-
+MBPP retention metric tainted by design; Python-HumanEval remains clean.
+
+Run: 120 steps x 128 completions, ~52 min. Training reward flat (~0.22-0.27)
+— but held-out eval moved consistently:
+
+| 158 unseen problems | FT | FT+GRPO | delta |
+|---|---|---|---|
+| pass rate | 36.1% | **38.6%** | +2.5 |
+| compile rate | 58.2% | **62.7%** | +4.4 |
+| format rate | 94.9% | 97.5% | +2.5 |
+
+All three axes improved in the reward's gradient direction after a deliberately
+conservative PoC. Levers for the full run: LR 2-3e-6, 300+ steps, curriculum
+filter (drop zero-variance groups), upweight clippy (0% of passing solutions
+are clippy-clean for BOTH models — large headroom).
+
+Ops notes: vllm0.18/torch2.10 compile path broken -> eager engine (patched
+LLM ref); final save NCCL-timeout crash is harmless (step-120 checkpoint ==
+final state); flashinfer-cubin must match flashinfer after vllm downgrades.
+
+### Artifacts for upload (3 now)
+  export/upload_hub.sh export/qwen3-8b-ft     gradientsj/rust-coder-8b
+  export/upload_hub.sh export/qwen3-8b-grpo   gradientsj/rust-coder-8b-grpo
+  export/upload_hub.sh export/qwen3-8b-ft-fp8 gradientsj/rust-coder-8b-fp8
