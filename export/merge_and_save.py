@@ -54,6 +54,20 @@ def is_dcp_sharded(d: Path) -> bool:
     return sub.is_dir() and any(sub.glob("*.distcp"))
 
 
+def fix_tokenizer_config(out: Path) -> None:
+    """transformers 5.5 writes extra_special_tokens as a LIST, which crashes
+    loads in 4.x AND 5.10+ ('list' has no attribute 'keys'). The base Qwen3
+    tokenizer_config doesn't carry the field at all — drop it."""
+    p = out / "tokenizer_config.json"
+    if not p.exists():
+        return
+    cfg = json.loads(p.read_text())
+    if isinstance(cfg.get("extra_special_tokens"), list):
+        cfg.pop("extra_special_tokens")
+        p.write_text(json.dumps(cfg, indent=2, ensure_ascii=False))
+        print("  dropped list-valued extra_special_tokens (cross-version poison)")
+
+
 def fix_architectures(config_path: Path) -> None:
     """Intermediate FULL_STATE_DICT saves can carry FSDP-prefixed arch names;
     axolotl only strips them on the final output_dir (train.py:305-318)."""
@@ -75,6 +89,7 @@ def copy_consolidated(src: Path, out: Path) -> None:
             continue  # checkpoint subdirs (optimizer_0/ etc.) are never model files
         shutil.copy2(f, out / f.name)
     fix_architectures(out / "config.json")
+    fix_tokenizer_config(out)
 
 
 def merge_dcp(src: Path, out: Path, tokenizer_from: Path | None) -> None:
@@ -89,6 +104,7 @@ def merge_dcp(src: Path, out: Path, tokenizer_from: Path | None) -> None:
         if f.exists():
             shutil.copy2(f, out / name)
     fix_architectures(out / "config.json")
+    fix_tokenizer_config(out)
 
 
 def validate(out: Path, smoke: bool) -> dict:

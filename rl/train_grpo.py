@@ -36,6 +36,21 @@ from trl import GRPOConfig, GRPOTrainer  # noqa: E402
 
 from reward import make_grpo_reward_fn  # noqa: E402
 
+# vllm 0.18 + torch 2.10: the torch.compile rollout path is broken
+# (FakeTensorMode mismatch in inductor tracing) and TRL doesn't forward
+# enforce_eager. Patch TRL's module-level LLM reference to default eager —
+# ~10-20% slower generation, zero correctness impact.
+import trl.generation.vllm_generation as _vg  # noqa: E402
+
+
+class _EagerLLM(_vg.LLM):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("enforce_eager", True)
+        super().__init__(*args, **kwargs)
+
+
+_vg.LLM = _EagerLLM
+
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
@@ -66,7 +81,8 @@ def main() -> None:
         vllm_enable_sleep_mode=True,        # free vLLM VRAM during optimizer step
         vllm_max_model_length=2048,
         num_generations=8,                  # GRPO group size
-        max_prompt_length=1024,
+        # (max_prompt_length was removed in TRL 1.x — prompt budget is
+        # vllm_max_model_length minus completion length)
         max_completion_length=768,
         temperature=0.9,
         chat_template_kwargs={"enable_thinking": False},
