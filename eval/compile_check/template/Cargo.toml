@@ -1,0 +1,12 @@
+[package]
+name = "candidate"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+# keep builds fast and deterministic for the harness
+[profile.dev]
+debug = 0
+incremental = false

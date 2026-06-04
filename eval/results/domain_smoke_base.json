@@ -1,0 +1,133 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "pairs_file": "data/work/domain_eval_sample.jsonl",
+  "n_pairs": 12,
+  "n_compile_subset": 3,
+  "compile_pass_rate": 0.3333333333333333,
+  "clippy_clean_rate": 0.3333333333333333,
+  "mean_similarity": 0.28185,
+  "exact_match_rate": 0.0,
+  "timestamp": "2026-06-04T02:05:38",
+  "items": [
+    {
+      "id": "domain-20a6237636bead9f",
+      "crate": "serde_json",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": true,
+      "compiles": true,
+      "clippy_clean": true,
+      "similarity": 0.5345,
+      "exact_match": false
+    },
+    {
+      "id": "domain-d3fda01085ded738",
+      "crate": "log",
+      "pair_type": "instruction_code",
+      "in_compile_subset": true,
+      "compiles": false,
+      "clippy_clean": null,
+      "similarity": 0.3257,
+      "exact_match": false
+    },
+    {
+      "id": "domain-05a0936b66f62385",
+      "crate": "serde_json",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2005,
+      "exact_match": false
+    },
+    {
+      "id": "domain-e7c61b01ff8fd1b4",
+      "crate": "log",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1893,
+      "exact_match": false
+    },
+    {
+      "id": "domain-2ed499ed0210c454",
+      "crate": "bytes",
+      "pair_type": "instruction_code",
+      "in_compile_subset": true,
+      "compiles": false,
+      "clippy_clean": null,
+      "similarity": 0.5714,
+      "exact_match": false
+    },
+    {
+      "id": "domain-d9a39cb0d7fce6ae",
+      "crate": "bytes",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2497,
+      "exact_match": false
+    },
+    {
+      "id": "domain-41ff4ecd484f3650",
+      "crate": "log",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2516,
+      "exact_match": false
+    },
+    {
+      "id": "domain-6b856d9f564e6a2d",
+      "crate": "serde_json",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.217,
+      "exact_match": false
+    },
+    {
+      "id": "domain-04ce9a0a61e6dd4a",
+      "crate": "serde_json",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3471,
+      "exact_match": false
+    },
+    {
+      "id": "domain-c5e02b834decacc4",
+      "crate": "log",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2609,
+      "exact_match": false
+    },
+    {
+      "id": "domain-de29ad353972de70",
+      "crate": "serde_json",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0276,
+      "exact_match": false
+    },
+    {
+      "id": "domain-e76e0e0a5a10ab8c",
+      "crate": "bytes",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2069,
+      "exact_match": false
+    }
+  ]
+}

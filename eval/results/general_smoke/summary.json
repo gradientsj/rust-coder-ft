@@ -1,0 +1,9 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "tag": "smoke",
+  "source": "eval/results/general_smoke/Qwen__Qwen3-8B/results_2026-06-04T02-06-19.344467.json",
+  "scores": {
+    "humaneval.pass@1,create_test": 0.75,
+    "humaneval.pass@1_stderr,create_test": 0.1637
+  }
+}
