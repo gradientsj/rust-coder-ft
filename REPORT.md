@@ -271,3 +271,61 @@ Next, in order:
 
 Restore on a fresh instance: clone repo → `setup_env.sh` → `hf download` the
 model repos. ~20 minutes to fully operational.
+
+---
+
+## RUN 1 RESULTS (2026-06-04, overnight autonomous run)
+
+### Data (full scale)
+201 crates attempted → **180 kept** (21 rejected by the strict license gate,
+e.g. `rustls` "Apache-2.0 OR ISC OR MIT", `miniz_oxide` Zlib). 4,916 files →
+4,248 after quality+dedup → **14,080 domain pairs** + 28,160 anchors (achieved
+ratio exactly 1:2.0). 668-pair file-level domain holdout. 19.7M packed
+tokens/epoch. All artifacts in `data/splits/stats/`.
+
+### Training
+Qwen3-8B full FT, 3 epochs / 225 steps / 54 min on 4x H100 (FSDP2 full-shard,
+BF16, packing). Eval loss: 1.22 (pre) → 0.641 (ep1) → 0.629 (ep2) → **0.625**
+(ep3) — flat after epoch 1, no divergence, no instability. Plots in
+`eval/results/train_plots/`.
+
+### Eval (the numbers that matter)
+
+Domain — identical 100 held-out pairs (files never seen in training):
+
+| metric | base Qwen3-8B | fine-tuned | delta |
+|---|---|---|---|
+| mean edit similarity | 0.260 | **0.566** | **+0.306 (2.2x)** |
+| exact-match rate | 0.0% | **23%** | **+23 pts** |
+
+(compile-pass on this set is void at n=1 — only 1/100 heldout references
+compile standalone; crate-internal code. Qualitative compile signal instead:
+the served model's smoke output passes build+clippy+tests, and is notably more
+idiomatic than base — iterator `.eq()` vs double `collect::<Vec<_>>()`.)
+
+Retention — HumanEval/MBPP, identical protocol pre/post:
+
+| benchmark | pre | post | delta |
+|---|---|---|---|
+| HumanEval pass@1 | 0.628 | 0.555 | **−7.3 pts** |
+| MBPP pass@1 | 0.658 | 0.656 | −0.2 pts |
+
+Verdict: large domain gain, MBPP fully retained, real HumanEval regression.
+V2 levers (priority order): 2 epochs instead of 3 (eval loss was flat after
+ep1); raise general-instruct anchor share; add a Python raw-code anchor
+alongside rust_raw (HumanEval is raw-completion Python — the most-distant
+protocol from our chat-format Rust training).
+
+### Export/serve
+FT model consolidated (8.19B params) → FP8 compressed-tensors (9.44 GB) →
+served via vLLM → smoke output verified by the repo's own cargo judge:
+compiles ✓ clippy-clean ✓ tests pass ✓. Two cross-venv bugs fixed en route
+(quant venv needed protobuf; transformers 5.x↔4.x tokenizer_config
+incompatibility → tokenizer files now byte-copied, never round-tripped).
+
+### MORNING CHECKLIST (before terminating the instance!)
+1. `hf auth login` (one-time)
+2. `export/upload_hub.sh export/qwen3-8b-ft gradientsj/rust-coder-8b`
+3. optional: `export/upload_hub.sh export/qwen3-8b-ft-fp8 gradientsj/rust-coder-8b-fp8`
+4. `git status` should be clean (this report + results are already pushed)
+5. then terminate. Restore path: clone → setup_env.sh → hf download (~20 min)

@@ -44,7 +44,7 @@ pad_to_sequence_len: true
 # 2 micro x 4 GPUs x 8 accum = 64 seqs (~256k tokens) effective batch
 micro_batch_size: 2
 gradient_accumulation_steps: 8
-num_epochs: 2
+num_epochs: 3            # 19.7M tok/epoch packed -> ~75 steps/epoch; 3 epochs std for code SFT
 
 optimizer: adamw_torch_fused
 learning_rate: 1.5e-5                # full-FT range 1e-5..2e-5; higher torches
@@ -77,12 +77,13 @@ fsdp_config:
 
 # frequent early checkpoints: full FT can diverge early and we want rollback
 # points; prune old ones aggressively to bound disk
-save_steps: 25
-save_total_limit: 8
-eval_steps: 25
+save_steps: 50          # unattended run: each full save writes ~80GB
+save_total_limit: 3     # (model+optimizer); 25-step cadence would dominate IO
+eval_steps: 50
 logging_steps: 1
 
 wandb_project: rust-coder-ft
 wandb_name: qwen3-8b-fft
+wandb_mode: offline     # no wandb login on this box; sync later if wanted
 
 special_tokens: {}

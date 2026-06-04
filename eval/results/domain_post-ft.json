@@ -1,0 +1,1013 @@
+{
+  "model": "export/qwen3-8b-ft",
+  "pairs_file": "data/splits/heldout_domain.jsonl",
+  "n_pairs": 100,
+  "n_compile_subset": 1,
+  "compile_pass_rate": 0.0,
+  "clippy_clean_rate": 0.0,
+  "mean_similarity": 0.5663279999999998,
+  "exact_match_rate": 0.23,
+  "timestamp": "2026-06-04T04:15:16",
+  "items": [
+    {
+      "id": "domain-5eb02e03eff766f2",
+      "crate": "num-integer",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7949,
+      "exact_match": false
+    },
+    {
+      "id": "domain-80b1d94ace033d16",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2956,
+      "exact_match": false
+    },
+    {
+      "id": "domain-7cb6bf5de09e74b9",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2613,
+      "exact_match": false
+    },
+    {
+      "id": "domain-c32077960e7bd76e",
+      "crate": "futures-util",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2053,
+      "exact_match": false
+    },
+    {
+      "id": "domain-6cf52594c7132790",
+      "crate": "getrandom",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-15dc93829e207b44",
+      "crate": "serde_urlencoded",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2992,
+      "exact_match": false
+    },
+    {
+      "id": "domain-683afc41f2986e10",
+      "crate": "flate2",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3955,
+      "exact_match": false
+    },
+    {
+      "id": "domain-4fa932ff848b0a55",
+      "crate": "gimli",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3089,
+      "exact_match": false
+    },
+    {
+      "id": "domain-389fdbc5f0541c75",
+      "crate": "num-integer",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.771,
+      "exact_match": false
+    },
+    {
+      "id": "domain-604e1ed044ea87d3",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3709,
+      "exact_match": false
+    },
+    {
+      "id": "domain-9d6daa938e2b8094",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-f17cd3ff17fde4d1",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-997ee22c6fcca48b",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-3111d6feb15cb3d0",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4916,
+      "exact_match": false
+    },
+    {
+      "id": "domain-884f9113f1587d58",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7538,
+      "exact_match": false
+    },
+    {
+      "id": "domain-74ee2558c1e3d499",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-8d78b304472b40c1",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4879,
+      "exact_match": false
+    },
+    {
+      "id": "domain-3ab0013a2122bf5b",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-73ebcead68bfa7d7",
+      "crate": "spin",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-7bb809300a49cf31",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4232,
+      "exact_match": false
+    },
+    {
+      "id": "domain-86e76d5da1de8522",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-342d7fc870f84a5c",
+      "crate": "gimli",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.577,
+      "exact_match": false
+    },
+    {
+      "id": "domain-157157b08ad9f1bb",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.9704,
+      "exact_match": false
+    },
+    {
+      "id": "domain-52996576e4ce67d7",
+      "crate": "num-integer",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6558,
+      "exact_match": false
+    },
+    {
+      "id": "domain-9c8b58840d49011d",
+      "crate": "tokio",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-6cdf698361745813",
+      "crate": "anstream",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.8935,
+      "exact_match": false
+    },
+    {
+      "id": "domain-c684edc02758e565",
+      "crate": "tokio-util",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1949,
+      "exact_match": false
+    },
+    {
+      "id": "domain-0d3440103a0da70e",
+      "crate": "crossbeam-channel",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1649,
+      "exact_match": false
+    },
+    {
+      "id": "domain-ef9a010383b4cd8f",
+      "crate": "regex",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4671,
+      "exact_match": false
+    },
+    {
+      "id": "domain-9047b994a75c7128",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-4589917fa9d38c3a",
+      "crate": "winnow",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6387,
+      "exact_match": false
+    },
+    {
+      "id": "domain-e2499f61a954402b",
+      "crate": "tokio",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2775,
+      "exact_match": false
+    },
+    {
+      "id": "domain-fd5ffacd0feb1166",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1059,
+      "exact_match": false
+    },
+    {
+      "id": "domain-4b9d5779dffa5b4a",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-812496fd93eabe5e",
+      "crate": "tokio",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.619,
+      "exact_match": false
+    },
+    {
+      "id": "domain-1b200de8d4b6d10f",
+      "crate": "crossbeam-channel",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1376,
+      "exact_match": false
+    },
+    {
+      "id": "domain-8413053349ac805d",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3249,
+      "exact_match": false
+    },
+    {
+      "id": "domain-775314cba4b9d40a",
+      "crate": "anstream",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.9349,
+      "exact_match": false
+    },
+    {
+      "id": "domain-1eeb037d60bca1a9",
+      "crate": "reqwest",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.8812,
+      "exact_match": false
+    },
+    {
+      "id": "domain-d82f243c59f98893",
+      "crate": "nix",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7652,
+      "exact_match": false
+    },
+    {
+      "id": "domain-6451e232c3f686da",
+      "crate": "url",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.8743,
+      "exact_match": false
+    },
+    {
+      "id": "domain-fedfa992207e8ded",
+      "crate": "h2",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.5176,
+      "exact_match": false
+    },
+    {
+      "id": "domain-beaf67eef25f745e",
+      "crate": "gimli",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3191,
+      "exact_match": false
+    },
+    {
+      "id": "domain-c05b119e9aa7f746",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-21083a790415074a",
+      "crate": "nix",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6133,
+      "exact_match": false
+    },
+    {
+      "id": "domain-0a8ea61784995849",
+      "crate": "object",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7182,
+      "exact_match": false
+    },
+    {
+      "id": "domain-583da155876d2a06",
+      "crate": "h2",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0249,
+      "exact_match": false
+    },
+    {
+      "id": "domain-787bdffb0ab7080d",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-50904d710809085f",
+      "crate": "serde_urlencoded",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4444,
+      "exact_match": false
+    },
+    {
+      "id": "domain-a6a99c5d542bb6ce",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.9084,
+      "exact_match": false
+    },
+    {
+      "id": "domain-5017545f90ab5dc7",
+      "crate": "gimli",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.155,
+      "exact_match": false
+    },
+    {
+      "id": "domain-a6f79d5c1d413b27",
+      "crate": "reqwest",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3013,
+      "exact_match": false
+    },
+    {
+      "id": "domain-b55e3bf783154fb0",
+      "crate": "tracing",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2999,
+      "exact_match": false
+    },
+    {
+      "id": "domain-bcd09925a7236023",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-7bfa0c376ad30210",
+      "crate": "flate2",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.293,
+      "exact_match": false
+    },
+    {
+      "id": "domain-2db1fe414b66de50",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-008a1f45820ce4c8",
+      "crate": "crossbeam-channel",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.043,
+      "exact_match": false
+    },
+    {
+      "id": "domain-162d09641a058c5e",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0747,
+      "exact_match": false
+    },
+    {
+      "id": "domain-c93774e83dc4822f",
+      "crate": "tokio",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6707,
+      "exact_match": false
+    },
+    {
+      "id": "domain-ef9deba7db0c0e29",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-c4a2c6c757dcdb48",
+      "crate": "nom",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-1dc16b06440ac1c7",
+      "crate": "getrandom",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3702,
+      "exact_match": false
+    },
+    {
+      "id": "domain-e5270a2c2ec15aed",
+      "crate": "rand_core",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4157,
+      "exact_match": false
+    },
+    {
+      "id": "domain-a26c767ff57f8946",
+      "crate": "anstream",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4335,
+      "exact_match": false
+    },
+    {
+      "id": "domain-ee90aaf879e6f71d",
+      "crate": "anstream",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.237,
+      "exact_match": false
+    },
+    {
+      "id": "domain-a518bafa29c3e721",
+      "crate": "unicode-xid",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": true,
+      "compiles": false,
+      "clippy_clean": null,
+      "similarity": 0.5871,
+      "exact_match": false
+    },
+    {
+      "id": "domain-05abdf1ab2b05410",
+      "crate": "tokio",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-7eef3280945dfdd0",
+      "crate": "tokio-util",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2,
+      "exact_match": false
+    },
+    {
+      "id": "domain-9edd568265d2b8a2",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.055,
+      "exact_match": false
+    },
+    {
+      "id": "domain-24ac3691094b20bc",
+      "crate": "gimli",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-e7724e1ee4d39182",
+      "crate": "crossbeam-channel",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.224,
+      "exact_match": false
+    },
+    {
+      "id": "domain-6ff7465385460b49",
+      "crate": "gimli",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7691,
+      "exact_match": false
+    },
+    {
+      "id": "domain-be27956aa809ca7d",
+      "crate": "gimli",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4577,
+      "exact_match": false
+    },
+    {
+      "id": "domain-58c74fc32ef94b82",
+      "crate": "tracing",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-741e400f7c75768d",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-0ebefa0ea8d0fe8a",
+      "crate": "either",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4845,
+      "exact_match": false
+    },
+    {
+      "id": "domain-e2acfd809b224d92",
+      "crate": "nix",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.7431,
+      "exact_match": false
+    },
+    {
+      "id": "domain-86401744a3e975da",
+      "crate": "crossbeam-channel",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1284,
+      "exact_match": false
+    },
+    {
+      "id": "domain-410a013c8cebd154",
+      "crate": "tracing-attributes",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0748,
+      "exact_match": false
+    },
+    {
+      "id": "domain-03b3dd6e77117f89",
+      "crate": "tokio",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4171,
+      "exact_match": false
+    },
+    {
+      "id": "domain-ac5252577f654b3a",
+      "crate": "tracing",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3313,
+      "exact_match": false
+    },
+    {
+      "id": "domain-9b4f87248cad0e9e",
+      "crate": "tower",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0573,
+      "exact_match": false
+    },
+    {
+      "id": "domain-b549d3ca34b2119d",
+      "crate": "tokio",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.9723,
+      "exact_match": false
+    },
+    {
+      "id": "domain-af80b4fa8ce3d125",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.1452,
+      "exact_match": false
+    },
+    {
+      "id": "domain-d1eec098a6ea321b",
+      "crate": "toml",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-533a95b4a2934697",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0883,
+      "exact_match": false
+    },
+    {
+      "id": "domain-b37d8fe97e4f3e4a",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0608,
+      "exact_match": false
+    },
+    {
+      "id": "domain-5e5607ed31f6b8d7",
+      "crate": "h2",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.3735,
+      "exact_match": false
+    },
+    {
+      "id": "domain-7795879c0d90865f",
+      "crate": "time",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2993,
+      "exact_match": false
+    },
+    {
+      "id": "domain-afd3d3f49819957f",
+      "crate": "tracing",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.5328,
+      "exact_match": false
+    },
+    {
+      "id": "domain-f3c78d939c69b4a3",
+      "crate": "nom",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6012,
+      "exact_match": false
+    },
+    {
+      "id": "domain-39f213bd2781c5f4",
+      "crate": "tracing-subscriber",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.5308,
+      "exact_match": false
+    },
+    {
+      "id": "domain-79a68cddc614bf5f",
+      "crate": "num-integer",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.4508,
+      "exact_match": false
+    },
+    {
+      "id": "domain-cfa7d17bb85b3f6e",
+      "crate": "either",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 1.0,
+      "exact_match": true
+    },
+    {
+      "id": "domain-9af7bd427fa6975d",
+      "crate": "version_check",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.6599,
+      "exact_match": false
+    },
+    {
+      "id": "domain-a687ee8e0106827a",
+      "crate": "regex-automata",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.2015,
+      "exact_match": false
+    },
+    {
+      "id": "domain-446b44a6396094f5",
+      "crate": "regex-automata",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.5196,
+      "exact_match": false
+    },
+    {
+      "id": "domain-57e1c3d65f9fa40a",
+      "crate": "gimli",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.5668,
+      "exact_match": false
+    },
+    {
+      "id": "domain-0d251b42c420fc21",
+      "crate": "num-integer",
+      "pair_type": "sig_doc_impl",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.897,
+      "exact_match": false
+    },
+    {
+      "id": "domain-3d80a4101d296ba0",
+      "crate": "anstream",
+      "pair_type": "instruction_code",
+      "in_compile_subset": false,
+      "compiles": null,
+      "clippy_clean": null,
+      "similarity": 0.0218,
+      "exact_match": false
+    }
+  ]
+}

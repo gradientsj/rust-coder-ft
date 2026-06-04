@@ -1,0 +1,9 @@
+{
+  "model": "export/qwen3-8b-ft",
+  "tag": "post-ft",
+  "source": "eval/results/general_post-ft/export__qwen3-8b-ft/results_2026-06-04T04-06-06.722724.json",
+  "scores": {
+    "humaneval.pass@1": 0.5549,
+    "mbpp.pass_at_1": 0.656
+  }
+}

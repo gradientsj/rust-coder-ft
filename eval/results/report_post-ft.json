@@ -1,0 +1,25 @@
+{
+  "model": "export/qwen3-8b-ft",
+  "tag": "post-ft",
+  "timestamp": "2026-06-04T04:45:05",
+  "domain": {
+    "n_pairs": 100,
+    "n_compile_subset": 1,
+    "compile_pass_rate": 0.0,
+    "clippy_clean_rate": 0.0,
+    "mean_similarity": 0.5663279999999998,
+    "exact_match_rate": 0.23
+  },
+  "general": {
+    "humaneval.pass@1": 0.5549,
+    "mbpp.pass_at_1": 0.656
+  },
+  "baseline": {
+    "humaneval.pass@1": 0.628,
+    "mbpp.pass_at_1": 0.658
+  },
+  "retention_delta": {
+    "humaneval.pass@1": -0.0731,
+    "mbpp.pass_at_1": -0.002
+  }
+}

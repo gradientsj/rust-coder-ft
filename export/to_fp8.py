@@ -34,13 +34,12 @@ def main() -> None:
         raise SystemExit(f"{args.out} exists and is not empty")
 
     import torch  # noqa: F401  (fail fast if venv is wrong)
-    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from transformers import AutoModelForCausalLM
     from llmcompressor import oneshot
     from llmcompressor.modifiers.quantization import QuantizationModifier
 
     print(f"loading {args.model} (dtype=auto keeps bf16 fine-tunes bf16)...")
     model = AutoModelForCausalLM.from_pretrained(args.model, dtype="auto")
-    tokenizer = AutoTokenizer.from_pretrained(args.model)
 
     recipe = QuantizationModifier(
         targets="Linear", scheme="FP8_DYNAMIC", ignore=args.ignore)
@@ -48,7 +47,24 @@ def main() -> None:
 
     args.out.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(str(args.out), save_compressed=True)
-    tokenizer.save_pretrained(str(args.out))
+
+    # Tokenizer: byte-copy from a local source dir rather than round-tripping
+    # through this venv's older transformers (a 5.x-saved tokenizer_config can
+    # crash 4.x on load — extra_special_tokens list-vs-dict). For HF-id
+    # sources fall back to AutoTokenizer.
+    src = Path(args.model)
+    tok_files = ("tokenizer.json", "tokenizer_config.json",
+                 "special_tokens_map.json", "vocab.json", "merges.txt",
+                 "added_tokens.json", "chat_template.jinja",
+                 "generation_config.json")
+    if src.is_dir():
+        import shutil
+        for name in tok_files:
+            if (src / name).exists():
+                shutil.copy2(src / name, args.out / name)
+    else:
+        from transformers import AutoTokenizer
+        AutoTokenizer.from_pretrained(args.model).save_pretrained(str(args.out))
 
     # verify the result is what vLLM will auto-detect
     cfg = json.loads((args.out / "config.json").read_text())

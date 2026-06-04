@@ -1,47 +1,424 @@
-# Curated crate allowlist for the domain scrape.
-#
-# Crates are pulled as published source tarballs from crates.io (cleaner license
-# metadata than git HEAD; the API reports the SPDX expression per version).
-# `org` is provenance only — recorded per file, not used for filtering.
-#
-# LICENSE POLICY (hard filter, enforced in github_harvest.py):
-#   Every token of the crate's SPDX expression must be in `license_allowlist`.
-#   This is stricter than SPDX OR-semantics on purpose: "MIT OR GPL-3.0" is
-#   REJECTED even though MIT could be elected, so no reviewer ever has to
-#   reason about license election. Unknown/missing expressions are rejected.
-#   Files carrying their own contradicting SPDX-License-Identifier header are
-#   dropped individually.
-
+# Expanded 2026-06-04: curated allowlist + crates.io top-200 by downloads.
+# License filter remains the hard gate; non-permissive crates are rejected
+# at harvest time and counted in harvest_stats.json.
 license_allowlist:
-  - MIT
-  - Apache-2.0
-  - BSD-2-Clause
-  - BSD-3-Clause
-
+- MIT
+- Apache-2.0
+- BSD-2-Clause
+- BSD-3-Clause
 harvest:
-  max_files_per_crate: 400        # safety cap; tiny-test runs override lower
-  include_dirs: [src, examples, tests, benches]
-  exclude_path_substrings: [/target/, /vendor/, /third_party/]
-  rate_limit_seconds: 1.0         # crates.io API policy: max 1 req/s
-  user_agent: "rust-coder-ft data pipeline (stanleyjacobai@gmail.com)"
-
+  max_files_per_crate: 300
+  include_dirs:
+  - src
+  - examples
+  - tests
+  - benches
+  exclude_path_substrings:
+  - /target/
+  - /vendor/
+  - /third_party/
+  rate_limit_seconds: 1.0
+  user_agent: rust-coder-ft data pipeline (stanleyjacobai@gmail.com)
 crates:
-  # rust-lang
-  - {name: regex,       org: rust-lang}
-  - {name: log,         org: rust-lang}
-  - {name: libc,        org: rust-lang}
-  # tokio-rs
-  - {name: tokio,       org: tokio-rs}
-  - {name: mio,         org: tokio-rs}
-  - {name: bytes,       org: tokio-rs}
-  - {name: tracing,     org: tokio-rs}
-  # serde-rs
-  - {name: serde,       org: serde-rs}
-  - {name: serde_json,  org: serde-rs}
-  # clap
-  - {name: clap,        org: clap-rs}
-  # rayon
-  - {name: rayon,       org: rayon-rs}
-  # hyperium
-  - {name: hyper,       org: hyperium}
-  - {name: http,        org: hyperium}
+- name: regex
+  org: rust-lang
+- name: log
+  org: rust-lang
+- name: libc
+  org: rust-lang
+- name: tokio
+  org: tokio-rs
+- name: mio
+  org: tokio-rs
+- name: bytes
+  org: tokio-rs
+- name: tracing
+  org: tokio-rs
+- name: serde
+  org: serde-rs
+- name: serde_json
+  org: serde-rs
+- name: clap
+  org: clap-rs
+- name: rayon
+  org: rayon-rs
+- name: hyper
+  org: hyperium
+- name: http
+  org: hyperium
+- name: syn
+  org: crates.io-top200
+- name: hashbrown
+  org: crates.io-top200
+- name: getrandom
+  org: crates.io-top200
+- name: bitflags
+  org: crates.io-top200
+- name: rand_core
+  org: crates.io-top200
+- name: rand
+  org: crates.io-top200
+- name: proc-macro2
+  org: crates.io-top200
+- name: base64
+  org: crates.io-top200
+- name: quote
+  org: crates.io-top200
+- name: indexmap
+  org: crates.io-top200
+- name: itertools
+  org: crates.io-top200
+- name: regex-syntax
+  org: crates.io-top200
+- name: windows-sys
+  org: crates.io-top200
+- name: cfg-if
+  org: crates.io-top200
+- name: thiserror-impl
+  org: crates.io-top200
+- name: thiserror
+  org: crates.io-top200
+- name: rand_chacha
+  org: crates.io-top200
+- name: memchr
+  org: crates.io-top200
+- name: unicode-ident
+  org: crates.io-top200
+- name: itoa
+  org: crates.io-top200
+- name: serde_derive
+  org: crates.io-top200
+- name: autocfg
+  org: crates.io-top200
+- name: heck
+  org: crates.io-top200
+- name: regex-automata
+  org: crates.io-top200
+- name: once_cell
+  org: crates.io-top200
+- name: cc
+  org: crates.io-top200
+- name: socket2
+  org: crates.io-top200
+- name: ryu
+  org: crates.io-top200
+- name: smallvec
+  org: crates.io-top200
+- name: aho-corasick
+  org: crates.io-top200
+- name: parking_lot_core
+  org: crates.io-top200
+- name: rustix
+  org: crates.io-top200
+- name: parking_lot
+  org: crates.io-top200
+- name: strsim
+  org: crates.io-top200
+- name: windows_x86_64_msvc
+  org: crates.io-top200
+- name: linux-raw-sys
+  org: crates.io-top200
+- name: windows_x86_64_gnu
+  org: crates.io-top200
+- name: windows_aarch64_msvc
+  org: crates.io-top200
+- name: windows_i686_msvc
+  org: crates.io-top200
+- name: windows_i686_gnu
+  org: crates.io-top200
+- name: lazy_static
+  org: crates.io-top200
+- name: windows-targets
+  org: crates.io-top200
+- name: num-traits
+  org: crates.io-top200
+- name: version_check
+  org: crates.io-top200
+- name: semver
+  org: crates.io-top200
+- name: digest
+  org: crates.io-top200
+- name: either
+  org: crates.io-top200
+- name: pin-project-lite
+  org: crates.io-top200
+- name: lock_api
+  org: crates.io-top200
+- name: idna
+  org: crates.io-top200
+- name: windows_aarch64_gnullvm
+  org: crates.io-top200
+- name: windows_x86_64_gnullvm
+  org: crates.io-top200
+- name: block-buffer
+  org: crates.io-top200
+- name: anyhow
+  org: crates.io-top200
+- name: scopeguard
+  org: crates.io-top200
+- name: time
+  org: crates.io-top200
+- name: miniz_oxide
+  org: crates.io-top200
+- name: rustls
+  org: crates.io-top200
+- name: ppv-lite86
+  org: crates.io-top200
+- name: crossbeam-utils
+  org: crates.io-top200
+- name: percent-encoding
+  org: crates.io-top200
+- name: slab
+  org: crates.io-top200
+- name: fastrand
+  org: crates.io-top200
+- name: futures-core
+  org: crates.io-top200
+- name: url
+  org: crates.io-top200
+- name: toml
+  org: crates.io-top200
+- name: generic-array
+  org: crates.io-top200
+- name: sha2
+  org: crates.io-top200
+- name: futures-util
+  org: crates.io-top200
+- name: futures-task
+  org: crates.io-top200
+- name: clap_lex
+  org: crates.io-top200
+- name: typenum
+  org: crates.io-top200
+- name: tracing-core
+  org: crates.io-top200
+- name: http-body
+  org: crates.io-top200
+- name: futures-sink
+  org: crates.io-top200
+- name: futures-channel
+  org: crates.io-top200
+- name: byteorder
+  org: crates.io-top200
+- name: zerocopy
+  org: crates.io-top200
+- name: cpufeatures
+  org: crates.io-top200
+- name: h2
+  org: crates.io-top200
+- name: unicode-width
+  org: crates.io-top200
+- name: futures-io
+  org: crates.io-top200
+- name: fnv
+  org: crates.io-top200
+- name: chrono
+  org: crates.io-top200
+- name: errno
+  org: crates.io-top200
+- name: winnow
+  org: crates.io-top200
+- name: tempfile
+  org: crates.io-top200
+- name: ahash
+  org: crates.io-top200
+- name: memoffset
+  org: crates.io-top200
+- name: nix
+  org: crates.io-top200
+- name: form_urlencoded
+  org: crates.io-top200
+- name: uuid
+  org: crates.io-top200
+- name: futures
+  org: crates.io-top200
+- name: toml_edit
+  org: crates.io-top200
+- name: tokio-util
+  org: crates.io-top200
+- name: pin-utils
+  org: crates.io-top200
+- name: wasi
+  org: crates.io-top200
+- name: tokio-rustls
+  org: crates.io-top200
+- name: equivalent
+  org: crates.io-top200
+- name: tokio-macros
+  org: crates.io-top200
+- name: futures-macro
+  org: crates.io-top200
+- name: untrusted
+  org: crates.io-top200
+- name: crypto-common
+  org: crates.io-top200
+- name: rustc_version
+  org: crates.io-top200
+- name: rustls-webpki
+  org: crates.io-top200
+- name: pkg-config
+  org: crates.io-top200
+- name: ring
+  org: crates.io-top200
+- name: tracing-attributes
+  org: crates.io-top200
+- name: shlex
+  org: crates.io-top200
+- name: clap_derive
+  org: crates.io-top200
+- name: rustc-hash
+  org: crates.io-top200
+- name: redox_syscall
+  org: crates.io-top200
+- name: futures-executor
+  org: crates.io-top200
+- name: nom
+  org: crates.io-top200
+- name: signal-hook-registry
+  org: crates.io-top200
+- name: httparse
+  org: crates.io-top200
+- name: rustversion
+  org: crates.io-top200
+- name: tinyvec
+  org: crates.io-top200
+- name: webpki-roots
+  org: crates.io-top200
+- name: clap_builder
+  org: crates.io-top200
+- name: thread_local
+  org: crates.io-top200
+- name: num-integer
+  org: crates.io-top200
+- name: darling_macro
+  org: crates.io-top200
+- name: toml_datetime
+  org: crates.io-top200
+- name: darling_core
+  org: crates.io-top200
+- name: darling
+  org: crates.io-top200
+- name: subtle
+  org: crates.io-top200
+- name: anstyle
+  org: crates.io-top200
+- name: spin
+  org: crates.io-top200
+- name: time-macros
+  org: crates.io-top200
+- name: reqwest
+  org: crates.io-top200
+- name: crc32fast
+  org: crates.io-top200
+- name: flate2
+  org: crates.io-top200
+- name: iana-time-zone
+  org: crates.io-top200
+- name: async-trait
+  org: crates.io-top200
+- name: num_cpus
+  org: crates.io-top200
+- name: zeroize
+  org: crates.io-top200
+- name: tinyvec_macros
+  org: crates.io-top200
+- name: object
+  org: crates.io-top200
+- name: crossbeam-epoch
+  org: crates.io-top200
+- name: hex
+  org: crates.io-top200
+- name: synstructure
+  org: crates.io-top200
+- name: unicode-xid
+  org: crates.io-top200
+- name: strum_macros
+  org: crates.io-top200
+- name: anstream
+  org: crates.io-top200
+- name: strum
+  org: crates.io-top200
+- name: want
+  org: crates.io-top200
+- name: tower-service
+  org: crates.io-top200
+- name: try-lock
+  org: crates.io-top200
+- name: env_logger
+  org: crates.io-top200
+- name: time-core
+  org: crates.io-top200
+- name: tower
+  org: crates.io-top200
+- name: anstyle-parse
+  org: crates.io-top200
+- name: crossbeam-deque
+  org: crates.io-top200
+- name: sync_wrapper
+  org: crates.io-top200
+- name: hyper-rustls
+  org: crates.io-top200
+- name: glob
+  org: crates.io-top200
+- name: mime
+  org: crates.io-top200
+- name: crossbeam-channel
+  org: crates.io-top200
+- name: anstyle-query
+  org: crates.io-top200
+- name: rustc-demangle
+  org: crates.io-top200
+- name: gimli
+  org: crates.io-top200
+- name: unicode-normalization
+  org: crates.io-top200
+- name: pin-project
+  org: crates.io-top200
+- name: pin-project-internal
+  org: crates.io-top200
+- name: walkdir
+  org: crates.io-top200
+- name: colorchoice
+  org: crates.io-top200
+- name: rustls-pemfile
+  org: crates.io-top200
+- name: stable_deref_trait
+  org: crates.io-top200
+- name: httpdate
+  org: crates.io-top200
+- name: hermit-abi
+  org: crates.io-top200
+- name: tracing-subscriber
+  org: crates.io-top200
+- name: openssl-probe
+  org: crates.io-top200
+- name: utf8parse
+  org: crates.io-top200
+- name: same-file
+  org: crates.io-top200
+- name: prost
+  org: crates.io-top200
+- name: num-bigint
+  org: crates.io-top200
+- name: prost-derive
+  org: crates.io-top200
+- name: deranged
+  org: crates.io-top200
+- name: termcolor
+  org: crates.io-top200
+- name: addr2line
+  org: crates.io-top200
+- name: arrayvec
+  org: crates.io-top200
+- name: ipnet
+  org: crates.io-top200
+- name: serde_urlencoded
+  org: crates.io-top200
+- name: backtrace
+  org: crates.io-top200
+- name: unicode-bidi
+  org: crates.io-top200
+- name: hmac
+  org: crates.io-top200
+- name: bumpalo
+  org: crates.io-top200
